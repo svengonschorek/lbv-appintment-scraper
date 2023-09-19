@@ -36,7 +36,7 @@ def sent_to_teams(lbv_date):
         teams_notification.send()
 
 def scrape_lbv(scheduler):
-    scheduler.enter(10, 1, scrape_lbv, (scheduler,))
+    scheduler.enter(60, 1, scrape_lbv, (scheduler,))
 
     url = 'https://lbv-termine.de/frontend/standortauswahl.php'
 
@@ -74,5 +74,5 @@ def scrape_lbv(scheduler):
 
 if __name__ == '__main__':
     my_scheduler = sched.scheduler(time.time, time.sleep)
-    my_scheduler.enter(10, 1, scrape_lbv, (my_scheduler,))
+    my_scheduler.enter(60, 1, scrape_lbv, (my_scheduler,))
     my_scheduler.run()
