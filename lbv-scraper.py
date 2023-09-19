@@ -31,8 +31,13 @@ def sent_to_teams(lbv_date):
         teams_channel = '{}'.format(teams_hook)
         teams_notification = pymsteams.connectorcard(teams_channel)
 
+        message_body = (
+            f"""Der Termin ist frei am: {lbv_date}"""
+            f"""<br>Termin kann hier gebucht werden: <a href="https://lbv-termine.de/frontend/dienstleistungsauswahl.php?kategorieid=2">Link</a>"""
+        )
+
         teams_notification.title("Neuer passender Termin beim LBV!")
-        teams_notification.text("Der Termin ist frei am: {}". format(lbv_date))
+        teams_notification.text(message_body)
         teams_notification.send()
 
 def scrape_lbv(scheduler):
