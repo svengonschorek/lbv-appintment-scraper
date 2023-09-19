@@ -9,14 +9,17 @@ Prerequisites:
 To setup the service locally, the following steps have to be executed:
 
 <b>1 - Create virtual environment</b><br />
+
 To do this, open a terminal and go to this directory. Then execute: `python -m venv venv`<br />
 Afterwards activate the environment using `.\venv\Scripts\activate`
 
 <b>2 - Install dependencies</b><br />
+
 The required dependencies are saved in the requirements.txt file.<br />
 To install the dependencies execute `pip install -r requirements.txt`
 
 <b>3 - Set environment variables</b><br />
+
 To set the environment variables, create a `.env` file. In this file the following variables have to be set:<br />
 
 - vorname
