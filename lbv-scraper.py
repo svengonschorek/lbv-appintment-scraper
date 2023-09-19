@@ -27,7 +27,7 @@ cookie = os.getenv('cookie')
 
 def sent_to_teams(lbv_date):
 
-    if lbv_date == date.fromisoformat('2023-09-22'):
+    if date.fromisoformat('2023-09-22') <= lbv_date <= date.fromisoformat('2023-09-27'):
         teams_channel = '{}'.format(teams_hook)
         teams_notification = pymsteams.connectorcard(teams_channel)
 
