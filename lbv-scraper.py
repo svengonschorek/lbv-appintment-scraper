@@ -67,8 +67,9 @@ def scrape_lbv(scheduler):
         if "verfügbar ab" in str(i):
             ds = i.text.split()[2]
             appointments.append(datetime.strptime(ds, '%d.%m.%Y').date())
+    now = datetime.now()
 
-    print(min(appointments))
+    print('{dt} - Next Appointment: {na}'.format(dt=now.strftime("%d/%m/%Y %H:%M:%S"), na=min(appointments)))
     sent_to_teams(min(appointments))
 
 
